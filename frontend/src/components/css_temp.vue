@@ -8,6 +8,11 @@
                 </div>
             </div>
         </header>
+        <div id="my-editormd" >
+            <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc" style="display:none;"></textarea>
+            <!-- 注意：name屬性的值-->
+            <textarea id="my-editormd-html-code" name="my-editormd-html-code" style="display:none;"></textarea>
+        </div>
         <div class="container">
             <div id="accordion">
                 <div class="card">
@@ -94,5 +99,16 @@ export default {
     methods: {
     },
 }
+</script>
+<script type="text/javascript">
+  $(function() {
+      editormd("my-editormd", {//注意1：這裡的就是上面的DIV的id屬性值
+          width   : "90%",
+          height  : 640,
+          syncScrolling : "single",
+          path    : "./editor.md/lib/",//注意2：你的路徑
+          saveHTMLToTextarea : true//注意3：這個配置，方便post提交表單
+      });
+  });
 </script>
 
